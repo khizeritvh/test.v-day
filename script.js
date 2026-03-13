@@ -116,7 +116,7 @@ function handleNoClick() {
     const gifIndex = Math.min(noClickCount, gifStages.length - 1)
     swapGif(gifStages[gifIndex])
 
-    if (noClickCount >= 5 && !runawayEnabled) {
+    if (noClickCount >= 3 && !runawayEnabled) {
         enableRunaway()
         runawayEnabled = true
     }
