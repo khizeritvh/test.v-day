@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg:        #fdf6f0;
+    --bg2:       #fef0f4;
+    --blush:     #e8a0b0;
+    --rose:      #c96880;
+    --rose-deep: #a84f66;
+    --gold:      #b8935a;
+    --cream:     #f9efe8;
+    --text:      #3a2630;
+    --text-muted:#9a7a84;
+    --border:    rgba(200, 150, 160, 0.25);
+    --shadow:    rgba(180, 100, 130, 0.15);
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Jost', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image:
+        radial-gradient(ellipse at 10% 20%, rgba(240, 190, 200, 0.35) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 80%, rgba(230, 170, 185, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 55% 50%, rgba(255, 240, 245, 0.6) 0%, transparent 65%);
+}
+
+/* ── Floating petals ── */
+.petal-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    font-size: 1.1rem;
+    opacity: 0;
+    bottom: -40px;
+    animation: floatPetal linear infinite;
+}
+
+@keyframes floatPetal {
+    0%   { transform: translateY(0) rotate(0deg) scale(1);   opacity: 0; }
+    8%   { opacity: 0.45; }
+    85%  { opacity: 0.2; }
+    100% { transform: translateY(-108vh) rotate(280deg) scale(0.7); opacity: 0; }
+}
+
+/* ── Container ── */
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 52px 32px;
+    max-width: 480px;
+    width: 100%;
+}
+
+/* ── Decorative top rule ── */
+.container::before {
+    content: '— ✿ —';
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--blush);
+    letter-spacing: 0.3em;
+    margin-bottom: 14px;
+    animation: fadeUp 0.7s ease both;
+}
+
+/* ── Eyebrow ── */
+.eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    animation: fadeUp 0.8s ease 0.05s both;
+}
+
+/* ── Heading ── */
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+    animation: fadeUp 0.9s ease 0.1s both;
+}
+
+/* ── GIF ── */
+.gif-container {
+    margin: 28px auto;
+    display: flex;
+    justify-content: center;
+    animation: fadeUp 1s ease 0.2s both;
+}
+
+.gif-frame {
+    border-radius: 24px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    box-shadow:
+        0 2px 0 rgba(255,255,255,0.9) inset,
+        0 16px 48px var(--shadow),
+        0 4px 12px rgba(200, 140, 160, 0.12);
+}
+
+#cat-gif {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 18px;
+    display: block;
+    transition: opacity 0.3s ease;
+    background: var(--cream);
+}
+
+/* ── Buttons ── */
+.buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease 0.3s both;
+}
+
+#yes-btn {
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 0.05em;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.3) inset,
+        0 8px 24px rgba(180, 80, 110, 0.35);
+}
+
+#yes-btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.3) inset,
+        0 12px 32px rgba(180, 80, 110, 0.45);
+}
+
+#yes-btn:active {
+    transform: scale(0.97);
+}
+
+#no-btn {
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    padding: 12px 26px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: background 0.2s, color 0.2s, left 0.25s ease, top 0.25s ease;
+}
+
+#no-btn:hover {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text);
+}
+
+/* ── Toast ── */
+#tease-toast {
+    margin-top: 16px;
+    font-size: 0.88rem;
+    color: var(--rose);
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    min-height: 1.4rem;
+    letter-spacing: 0.02em;
+}
+
+#tease-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Music toggle ── */
+#music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px var(--shadow);
+    transition: transform 0.2s, background 0.2s;
+    z-index: 100;
+}
+
+#music-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* ── Yes page ── */
+.yes-container h1.yes-title {
+    font-size: 3.2rem;
+    color: var(--rose-deep);
+    animation: bounceTitle 0.8s ease infinite alternate, fadeUp 0.8s ease 0.1s both;
+}
+
+@keyframes bounceTitle {
+    from { transform: translateY(0) rotate(-0.4deg); }
+    to   { transform: translateY(-10px) rotate(0.4deg); }
+}
+
+.yes-message {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--rose);
+    font-weight: 400;
+    margin-top: 22px;
+    letter-spacing: 0.02em;
+    animation: fadeUp 1s ease 0.5s both;
+}
+
+.yes-container #cat-gif {
+    width: 240px;
+    height: 240px;
+}
+
+/* ── Shared animation ── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
