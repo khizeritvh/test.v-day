@@ -5,6 +5,7 @@
 }
 
 :root {
+<<<<<<< HEAD
     --bg:        #fdf6f0;
     --bg2:       #fef0f4;
     --blush:     #e8a0b0;
@@ -16,17 +17,33 @@
     --text-muted:#9a7a84;
     --border:    rgba(200, 150, 160, 0.25);
     --shadow:    rgba(180, 100, 130, 0.15);
+=======
+    --bg: #0d0a14;
+    --surface: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, 0.09);
+    --rose: #e8547a;
+    --rose-light: #f2899f;
+    --rose-glow: rgba(232, 84, 122, 0.3);
+    --gold: #c9a96e;
+    --text: #f0e6ee;
+    --text-muted: rgba(240, 230, 238, 0.5);
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
 }
 
 body {
     background-color: var(--bg);
+<<<<<<< HEAD
     font-family: 'Jost', sans-serif;
+=======
+    font-family: 'DM Sans', sans-serif;
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     background-image:
+<<<<<<< HEAD
         radial-gradient(ellipse at 10% 20%, rgba(240, 190, 200, 0.35) 0%, transparent 50%),
         radial-gradient(ellipse at 90% 80%, rgba(230, 170, 185, 0.3) 0%, transparent 50%),
         radial-gradient(ellipse at 55% 50%, rgba(255, 240, 245, 0.6) 0%, transparent 65%);
@@ -34,6 +51,15 @@ body {
 
 /* ── Floating petals ── */
 .petal-bg {
+=======
+        radial-gradient(ellipse at 20% 80%, rgba(160, 30, 90, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 10%, rgba(100, 20, 60, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(232, 84, 122, 0.05) 0%, transparent 70%);
+}
+
+/* Floating particles */
+.particles {
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
     position: fixed;
     inset: 0;
     pointer-events: none;
@@ -41,6 +67,7 @@ body {
     overflow: hidden;
 }
 
+<<<<<<< HEAD
 .petal {
     position: absolute;
     font-size: 1.1rem;
@@ -57,10 +84,29 @@ body {
 }
 
 /* ── Container ── */
+=======
+.particle {
+    position: absolute;
+    font-size: 1rem;
+    opacity: 0;
+    animation: floatUp linear infinite;
+    bottom: -40px;
+}
+
+@keyframes floatUp {
+    0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+    10%  { opacity: 0.25; }
+    90%  { opacity: 0.12; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Container */
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
 .container {
     position: relative;
     z-index: 1;
     text-align: center;
+<<<<<<< HEAD
     padding: 52px 32px;
     max-width: 480px;
     width: 100%;
@@ -103,10 +149,49 @@ h1 {
 }
 
 /* ── GIF ── */
+=======
+    padding: 48px 28px;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Eyebrow label */
+.eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    opacity: 0.85;
+    animation: fadeSlideIn 0.8s ease both;
+}
+
+/* Heading */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 8px;
+    text-shadow: 0 0 40px var(--rose-glow);
+    animation: fadeSlideIn 0.9s ease 0.1s both, softPulse 4s ease-in-out 1.5s infinite;
+}
+
+@keyframes softPulse {
+    0%, 100% { text-shadow: 0 0 40px var(--rose-glow); }
+    50%       { text-shadow: 0 0 70px rgba(232, 84, 122, 0.5); }
+}
+
+/* GIF */
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
 .gif-container {
     margin: 28px auto;
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     animation: fadeUp 1s ease 0.2s both;
 }
 
@@ -120,12 +205,28 @@ h1 {
         0 2px 0 rgba(255,255,255,0.9) inset,
         0 16px 48px var(--shadow),
         0 4px 12px rgba(200, 140, 160, 0.12);
+=======
+    animation: fadeSlideIn 1s ease 0.2s both;
+}
+
+.gif-frame {
+    border-radius: 20px;
+    padding: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 0 0 1px rgba(232, 84, 122, 0.12),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(232, 84, 122, 0.1);
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
 }
 
 #cat-gif {
     width: 200px;
     height: 200px;
     object-fit: contain;
+<<<<<<< HEAD
     border-radius: 18px;
     display: block;
     transition: opacity 0.3s ease;
@@ -158,13 +259,51 @@ h1 {
     box-shadow:
         0 1px 0 rgba(255,255,255,0.3) inset,
         0 8px 24px rgba(180, 80, 110, 0.35);
+=======
+    border-radius: 14px;
+    transition: opacity 0.3s ease;
+    display: block;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    animation: fadeSlideIn 1s ease 0.35s both;
+}
+
+#yes-btn {
+    background: linear-gradient(135deg, #e8547a, #c93060);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    padding: 16px 42px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow:
+        0 0 0 1px rgba(232, 84, 122, 0.3),
+        0 8px 24px rgba(232, 84, 122, 0.4);
+    letter-spacing: 0.04em;
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
 }
 
 #yes-btn:hover {
     transform: scale(1.05) translateY(-2px);
     box-shadow:
+<<<<<<< HEAD
         0 1px 0 rgba(255,255,255,0.3) inset,
         0 12px 32px rgba(180, 80, 110, 0.45);
+=======
+        0 0 0 1px rgba(232, 84, 122, 0.4),
+        0 12px 32px rgba(232, 84, 122, 0.55);
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
 }
 
 #yes-btn:active {
@@ -172,6 +311,7 @@ h1 {
 }
 
 #no-btn {
+<<<<<<< HEAD
     background: rgba(255, 255, 255, 0.6);
     color: var(--text-muted);
     border: 1px solid var(--border);
@@ -199,6 +339,33 @@ h1 {
     font-style: italic;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.05rem;
+=======
+    background: var(--surface);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-family: 'DM Sans', sans-serif;
+    padding: 13px 28px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, left 0.25s ease, top 0.25s ease;
+    backdrop-filter: blur(8px);
+}
+
+#no-btn:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--text);
+}
+
+/* Toast */
+#tease-toast {
+    margin-top: 18px;
+    font-size: 0.9rem;
+    color: var(--rose-light);
+    font-weight: 400;
+    font-style: italic;
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -211,26 +378,42 @@ h1 {
     transform: translateY(0);
 }
 
+<<<<<<< HEAD
 /* ── Music toggle ── */
+=======
+/* Music button */
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
 #music-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
+<<<<<<< HEAD
     background: rgba(255, 255, 255, 0.75);
+=======
+    background: rgba(255, 255, 255, 0.06);
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
     border: 1px solid var(--border);
     border-radius: 50%;
     width: 50px;
     height: 50px;
+<<<<<<< HEAD
     font-size: 1.2rem;
     cursor: pointer;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 16px var(--shadow);
+=======
+    font-size: 1.3rem;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
     transition: transform 0.2s, background 0.2s;
     z-index: 100;
 }
 
 #music-toggle:hover {
     transform: scale(1.1);
+<<<<<<< HEAD
     background: rgba(255, 255, 255, 0.95);
 }
 
@@ -255,6 +438,33 @@ h1 {
     margin-top: 22px;
     letter-spacing: 0.02em;
     animation: fadeUp 1s ease 0.5s both;
+=======
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Yes page */
+.yes-container .eyebrow {
+    animation: fadeSlideIn 0.6s ease both;
+}
+
+.yes-container h1.yes-title {
+    font-size: 2.8rem;
+    animation: bounceTitle 0.7s ease infinite alternate, fadeSlideIn 0.8s ease 0.1s both;
+}
+
+@keyframes bounceTitle {
+    from { transform: translateY(0) rotate(-0.5deg); }
+    to   { transform: translateY(-10px) rotate(0.5deg); }
+}
+
+.yes-message {
+    font-size: 1.15rem;
+    color: var(--rose-light);
+    font-weight: 300;
+    margin-top: 20px;
+    letter-spacing: 0.03em;
+    animation: fadeSlideIn 1s ease 0.5s both;
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
 }
 
 .yes-container #cat-gif {
@@ -262,8 +472,14 @@ h1 {
     height: 240px;
 }
 
+<<<<<<< HEAD
 /* ── Shared animation ── */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
+=======
+/* Shared animation */
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(14px); }
+>>>>>>> 53381002b4de1b58beb5e651dcc915e653231962
     to   { opacity: 1; transform: translateY(0); }
 }
