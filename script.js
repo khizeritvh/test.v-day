@@ -1,5 +1,5 @@
 const gifStages = [
-    "https://media.tenor.com/EBV7OT7ACfwAAAAj/u-u-qua-qua-u-quaa.gif",
+    "https://media1.tenor.com/EBV7OT7ACfwAAAAj/u-u-qua-qua-u-quaa.gif",
     "https://media1.tenor.com/m/uDugCXK4vI4AAAAd/chiikawa-hachiware.gif",
     "https://media.tenor.com/f_rkpJbH1s8AAAAj/somsom1012.gif",
     "https://media.tenor.com/OGY9zdREsVAAAAAj/somsom1012.gif",
